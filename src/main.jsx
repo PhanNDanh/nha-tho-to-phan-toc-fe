@@ -4,27 +4,36 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import keycloak from "./config/keycloak.js";
 
-keycloak
-  .init({
-    onLoad: "login-required",
-    checkLoginIframe: false,
-  })
-  .then((authenticated) => {
-    if (!authenticated) {
-      keycloak.login();
-      return;
-    }
+const isPreviewMode = import.meta.env.VITE_PREVIEW_MODE === "true";
 
-    localStorage.setItem("access_token", keycloak.token);
+const renderApp = () => {
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+};
 
-    ReactDOM.createRoot(document.getElementById("root")).render(
-      <React.StrictMode>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </React.StrictMode>
-    );
-  })
-  .catch((error) => {
-    console.error("Keycloak init failed:", error);
-  });
+if (isPreviewMode) {
+  renderApp();
+} else {
+  keycloak
+    .init({
+      onLoad: "login-required",
+      checkLoginIframe: false,
+    })
+    .then((authenticated) => {
+      if (!authenticated) {
+        keycloak.login();
+        return;
+      }
+
+      localStorage.setItem("access_token", keycloak.token);
+      renderApp();
+    })
+    .catch((error) => {
+      console.error("Keycloak init failed:", error);
+    });
+}
