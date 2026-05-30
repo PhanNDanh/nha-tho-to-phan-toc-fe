@@ -1,354 +1,287 @@
-/* =========================================================
-   ROLE DETAIL PAGE
-========================================================= */
-
 .role-detail-page {
-  min-height: 100vh;
   width: 100%;
-  max-width: 100%;
+  color: #111827;
+}
 
-  background: #f7f7f8;
+.role-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+}
 
-  /* bỏ gần hết lề */
-  padding: 0 6px 40px;
+.back-link {
+  border: none;
+  background: transparent;
+
+  padding: 0;
+
+  color: #e6002d;
+
+  font-size: 20px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  margin-bottom: 12px;
+
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  color: #c40028;
+}
+
+.role-detail-header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 950;
+  letter-spacing: -0.6px;
+}
+
+.role-detail-header p {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.save-button {
+  min-width: 160px;
+  height: 46px;
+  border: none !important;
+  border-radius: 14px !important;
+  background: #e6002d !important;
+  font-weight: 900 !important;
+  box-shadow: 0 12px 28px rgba(230, 0, 45, 0.22);
+}
+
+.role-info-card,
+.permission-card {
+  border: 1px solid #ececec !important;
+  border-radius: 22px !important;
+  box-shadow: none !important;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.role-info-card .card-body {
+  padding: 26px !important;
+}
+
+.role-info-title {
+  font-size: 30px;
+
+  font-weight: 950;
+
+  margin-bottom: 24px;
 
   color: #111827;
 }
 
-/* =========================================================
-   TOP BAR
-========================================================= */
-
-.top-bar {
-  height: 74px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  background: #ffffff;
-
-  margin-bottom: 20px;
-
-  padding: 0 8px;
-
-  border-radius: 0 0 12px 12px;
-
-  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
-}
-
-.back-button {
-  border-radius: 10px !important;
-
-  font-weight: 700 !important;
-
-  padding: 10px 18px !important;
-}
-
-.detail-action {
-  min-width: 160px;
-  height: 46px;
-
-  border-radius: 10px !important;
-
-  font-weight: 700 !important;
-}
-
-/* =========================================================
-   PAGE TITLE
-========================================================= */
-
-.role-detail-page h1 {
-  font-size: 34px;
-
-  font-weight: 800;
-
-  margin-bottom: 24px;
-
-  text-align: center;
-}
-
-/* =========================================================
-   COMMON CARD
-========================================================= */
-
-.info-card,
-.permission-card {
-  width: 100%;
-
-  border: none !important;
-
-  border-radius: 18px !important;
-
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
-
-  margin-bottom: 22px;
-}
-
-/* =========================================================
-   INFO CARD
-========================================================= */
-
-.info-card .card-body {
-  padding: 28px 34px;
-}
-
-.info-card h3 {
-  font-size: 24px;
-
-  font-weight: 800;
-
-  margin-bottom: 26px;
-}
-
-.info-grid {
+.role-info-grid {
   display: grid;
-
-  grid-template-columns: 220px 1fr;
-
-  row-gap: 22px;
-
-  font-size: 18px;
+  grid-template-columns: 220px 260px 1fr;
+  gap: 16px;
 }
 
-.info-label {
+.role-info-grid div {
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.role-info-grid span {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
   font-weight: 800;
+  margin-bottom: 8px;
 }
 
-/* =========================================================
-   TABS
-========================================================= */
+.role-info-grid strong {
+  color: #111827;
+  font-size: 16px;
+  font-weight: 900;
+}
 
-.tabs {
+.role-tabs {
   display: flex;
-
-  gap: 30px;
-
-  margin-bottom: 20px;
+  gap: 24px;
+  margin-bottom: 18px;
 }
 
-.tab {
-  padding-bottom: 12px;
-
-  font-size: 17px;
-
-  font-weight: 800;
-
+.role-tabs button {
+  border: none;
+  background: transparent;
+  padding: 0 0 12px;
   color: #9ca3af;
-
+  font-size: 15px;
+  font-weight: 900;
   cursor: pointer;
 }
 
-.tab.active {
-  color: #ed002f;
-
-  border-bottom: 3px solid #ed002f;
+.role-tabs button.active {
+  color: #e6002d;
+  border-bottom: 3px solid #e6002d;
 }
-
-/* =========================================================
-   PERMISSION CARD
-========================================================= */
 
 .permission-card .card-body {
-  padding: 6px;
+  padding: 0 !important;
 }
 
-/* =========================================================
-   SEARCH
-========================================================= */
+.permission-toolbar {
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.permission-toolbar h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 950;
+}
+
+.permission-toolbar p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
 
 .search-function {
-  width: 420px;
-  height: 48px;
-
-  border-radius: 12px;
-
+  width: 360px;
+  height: 46px;
+  border-radius: 14px;
   border: 1px solid #e5e7eb;
-
-  padding: 0 18px;
-
-  margin-bottom: 18px;
-
-  font-size: 15px;
-
+  padding: 0 16px;
+  font-size: 14px;
   outline: none;
 }
 
 .search-function:focus {
-  border-color: #ed002f;
+  border-color: #e6002d;
+  box-shadow: 0 0 0 4px rgba(230, 0, 45, 0.08);
 }
 
-/* =========================================================
-   TABLE
-========================================================= */
+.permission-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
 
 .permission-table {
-  width: 100%;
-
-  border: 1px solid #eeeeee;
-
+  min-width: 1080px;
   margin-bottom: 0 !important;
-
   background: white;
 }
 
-/* =========================================================
-   TABLE HEADER
-========================================================= */
-
-.permission-table th {
-  background: #ffffff;
-
-  padding: 14px 10px;
-
-  font-size: 15px;
-
-  font-weight: 800;
-
-  border: 1px solid #eeeeee;
-
+.permission-table thead th {
+  background: #fafafa;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 950;
+  padding: 16px 14px;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  text-align: center;
   white-space: nowrap;
-
-  text-align: center;
 }
 
-/* cột tên function siêu rộng */
-.permission-table th:first-child {
+.permission-table thead th:first-child {
   text-align: left;
-
-  width: 65%;
+  width: 34%;
 }
 
-/* =========================================================
-   TABLE BODY
-========================================================= */
-
-.permission-table td {
-  padding: 14px 10px;
-
-  border: 1px solid #f1f1f1;
-
+.permission-table tbody td {
+  padding: 15px 14px;
+  border-bottom: 1px solid #f1f1f1;
+  border-right: 1px solid #f5f5f5;
+  text-align: center;
   vertical-align: middle;
-
-  text-align: center;
-
-  font-size: 15px;
+  font-size: 14px;
 }
 
-.permission-table td:first-child {
+.permission-table tbody td:first-child {
   text-align: left;
 }
 
-/* =========================================================
-   FUNCTION TREE
-========================================================= */
+.permission-table tbody tr:hover {
+  background: #fff7f8;
+}
 
 .function-name {
   display: flex;
-
   align-items: center;
-
-  gap: 12px;
-
-  font-weight: 600;
+  gap: 10px;
+  font-weight: 700;
 }
 
-/* =========================================================
-   EXPAND BUTTON
-========================================================= */
-
 .tree-toggle {
-  width: 24px;
-  height: 24px;
-
-  border: 1px solid #9ca3af;
-
+  width: 26px;
+  height: 26px;
+  border: 1px solid #e5e7eb;
   background: #ffffff;
-
-  color: #6b7280;
-
-  border-radius: 4px;
-
-  font-weight: 900;
-
+  color: #374151;
+  border-radius: 8px;
+  font-weight: 950;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
-
-  transition: 0.2s;
 }
 
 .tree-toggle:hover {
-  background: #f3f4f6;
+  background: #fff1f3;
+  color: #e6002d;
+  border-color: #fecdd3;
 }
 
-/* giữ alignment */
 .tree-space {
   display: inline-block;
-
-  width: 24px;
+  width: 26px;
 }
-
-/* =========================================================
-   PARENT ROW
-========================================================= */
 
 .parent-row {
   background: #fafafa;
 }
 
 .parent-row .function-name {
-  font-weight: 800;
-
-  font-size: 18px;
+  font-weight: 950;
+  color: #111827;
 }
 
 .parent-empty-cell {
+  color: #9ca3af;
+  font-weight: 800;
   background: #fafafa;
 }
 
-/* =========================================================
-   CHECKBOX
-========================================================= */
-
 .permission-table input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-
-  accent-color: #ed002f;
-
+  width: 18px;
+  height: 18px;
+  accent-color: #e6002d;
   cursor: pointer;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1400px) {
-  .permission-table th:first-child {
-    width: 55%;
+@media (max-width: 1100px) {
+  .role-detail-header {
+    flex-direction: column;
   }
-}
 
-@media (max-width: 1200px) {
-  .permission-table th:first-child {
-    width: 45%;
+  .role-info-grid {
+    grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 992px) {
+  .permission-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .search-function {
     width: 100%;
-  }
-
-  .permission-table {
-    font-size: 13px;
-  }
-
-  .permission-table th,
-  .permission-table td {
-    padding: 10px 6px;
   }
 }

@@ -2,61 +2,136 @@
   width: 100%;
 }
 
-.clan-hero {
-  background: linear-gradient(135deg, #8b1e1e, #d92d20);
+.clan-header {
+  background: linear-gradient(135deg, #7f1d1d, #dc2626);
   color: white;
   border-radius: 24px;
-  padding: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 36px;
+  margin-bottom: 24px;
 }
 
-.clan-label {
-  margin: 0 0 8px;
-  font-weight: 800;
-  opacity: 0.85;
+.clan-header span {
+  font-weight: 900;
+  opacity: 0.9;
 }
 
-.clan-hero h1 {
+.clan-header h1 {
+  margin: 12px 0 8px;
+  font-size: 40px;
+  font-weight: 950;
+}
+
+.clan-header p {
+  max-width: 780px;
   margin: 0;
-  font-size: 34px;
-  font-weight: 900;
-}
-
-.clan-hero p {
-  margin: 10px 0 0;
-}
-
-.clan-badge {
-  background: white;
-  color: #b42318;
-  padding: 14px 20px;
-  border-radius: 999px;
-  font-weight: 900;
+  line-height: 1.7;
+  font-size: 17px;
 }
 
 .clan-grid {
-  margin-top: 24px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 22px;
 }
 
 .clan-card {
-  background: white;
-  border: 1px solid #eee;
-  border-radius: 20px;
-  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 22px;
+  padding: 26px;
+  margin-bottom: 22px;
 }
 
-.clan-card h3 {
-  margin: 0 0 12px;
-  color: #6b7280;
-  font-size: 15px;
+.main-card {
+  grid-row: span 3;
 }
 
 .clan-card h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.clan-card h3 {
   margin: 0;
-  font-size: 26px;
+  font-size: 30px;
+  font-weight: 950;
+  color: #b42318;
+}
+
+.clan-card p {
+  color: #4b5563;
+  line-height: 1.8;
+  margin: 10px 0 0;
+}
+
+.highlight {
+  color: #b42318 !important;
+  font-weight: 900;
+}
+
+.branch-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.branch-item {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.branch-item strong {
+  display: block;
+  color: #9a3412;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.branch-item span {
+  display: block;
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.clan-quote {
+  margin: 18px 0;
+  padding: 22px;
+  background: #fff7ed;
+  border-left: 5px solid #c2410c;
+  border-radius: 16px;
+  color: #9a3412;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+  .clan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-card {
+    grid-row: auto;
+  }
+
+  .branch-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .branch-list {
+    grid-template-columns: 1fr;
+  }
+
+  .clan-header h1 {
+    font-size: 32px;
+  }
 }

@@ -2,12 +2,19 @@
   min-height: 100vh;
   display: flex;
   background: #f6f7fb;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   color: #111827;
 }
 
+/* =======================
+   SIDEBAR
+======================= */
+
 .sidebar {
   width: 260px;
+  height: 100vh;
+  overflow-y: auto;
   background: #ffffff;
   border-right: 1px solid #e5e7eb;
   padding: 24px 18px;
@@ -22,16 +29,25 @@
 }
 
 .logo-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: #e6002d;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #b42318,
+    #e11d48
+  );
+
   color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 900;
+  font-family: serif;
 }
 
 .logo-title {
@@ -41,22 +57,21 @@
 }
 
 .logo-subtitle {
-  font-size: 13px;
+  font-size: 12px;
   color: #6b7280;
 }
 
 .menu-section-title {
-  margin: 18px 0 12px;
+  margin-top: 18px;
+  margin-bottom: 12px;
   padding-left: 10px;
+
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 1px;
+
   color: #9ca3af;
   text-transform: uppercase;
-}
-
-.system-title {
-  margin-top: 28px;
 }
 
 .sidebar-menu {
@@ -67,18 +82,26 @@
 
 .menu-button {
   width: 100%;
+
   border: none;
   background: transparent;
+
   color: #374151;
+
   padding: 12px 14px;
+
   border-radius: 12px;
+
   display: flex;
   align-items: center;
   gap: 12px;
+
   font-size: 14px;
   font-weight: 800;
+
   cursor: pointer;
   text-align: left;
+
   transition: all 0.2s ease;
 }
 
@@ -93,18 +116,34 @@
   color: #e6002d;
 }
 
+.menu-button.active svg {
+  color: #e6002d;
+}
+
+/* =======================
+   MAIN
+======================= */
+
 .main-wrapper {
   flex: 1;
   min-width: 0;
+
   display: flex;
   flex-direction: column;
 }
 
+/* =======================
+   NAVBAR
+======================= */
+
 .navbar {
   height: 76px;
+
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
+
   padding: 0 32px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -119,9 +158,11 @@
 
 .navbar-subtitle {
   margin-top: 4px;
+
   font-size: 13px;
-  color: #6b7280;
   font-weight: 500;
+
+  color: #6b7280;
 }
 
 .navbar-actions {
@@ -133,29 +174,42 @@
 .icon-button {
   width: 44px;
   height: 44px;
+
   border: none;
+
   background: #f3f4f6;
   color: #111827;
+
   border-radius: 14px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 17px;
+
   cursor: pointer;
 }
 
 .user-button {
   height: 44px;
+
   border: none;
+
   background: #f3f4f6;
   color: #111827;
+
   border-radius: 14px;
+
   padding: 0 15px;
+
   display: flex;
   align-items: center;
   gap: 9px;
+
   font-size: 14px;
   font-weight: 800;
+
   cursor: pointer;
 }
 
@@ -164,37 +218,74 @@
   background: #e5e7eb;
 }
 
+/* =======================
+   DROPDOWN
+======================= */
+
 .dropdown-wrapper {
   position: relative;
 }
 
 .dropdown-menu {
   position: absolute;
+
   right: 0;
   top: 54px;
+
   width: 250px;
+
   background: #ffffff;
+
   border: 1px solid #e5e7eb;
   border-radius: 16px;
+
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+
   padding: 10px;
+
   z-index: 100;
+}
+
+.dropdown-title {
+  padding: 10px 12px;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  color: #9ca3af;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 8px 0;
 }
 
 .dropdown-menu button {
   width: 100%;
+
   border: none;
   background: transparent;
+
   padding: 12px;
+
   border-radius: 12px;
+
   display: flex;
   align-items: center;
   gap: 10px;
+
   color: #374151;
+
   font-size: 14px;
   font-weight: 800;
-  cursor: pointer;
+
   text-align: left;
+
+  cursor: pointer;
 }
 
 .dropdown-menu button:hover {
@@ -202,21 +293,30 @@
   color: #e6002d;
 }
 
+/* =======================
+   USER INFO
+======================= */
+
 .user-info {
   padding: 12px;
+
   border-bottom: 1px solid #e5e7eb;
+
   margin-bottom: 8px;
 }
 
 .user-info strong {
   display: block;
+
   font-size: 14px;
   color: #111827;
 }
 
 .user-info span {
   display: block;
+
   margin-top: 4px;
+
   font-size: 13px;
   color: #6b7280;
 }
@@ -225,20 +325,72 @@
   color: #dc2626 !important;
 }
 
+/* =======================
+   CONTENT
+======================= */
+
 .content {
   flex: 1;
+
   padding: 28px 32px;
+
   overflow-y: auto;
+
   background: #f6f7fb;
 }
 
+/* =======================
+   FOOTER
+======================= */
+
 .footer {
   height: 48px;
+
   background: #ffffff;
+
   border-top: 1px solid #e5e7eb;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: #6b7280;
+
   font-size: 13px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 230px;
+  }
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .navbar-title {
+    font-size: 18px;
+  }
+
+  .navbar-subtitle {
+    display: none;
+  }
+
+  .content {
+    padding: 16px;
+  }
 }

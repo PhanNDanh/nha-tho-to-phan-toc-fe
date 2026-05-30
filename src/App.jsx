@@ -1,10 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 
+import HomePage from "./pages/HomePage";
+import ClanPage from "./pages/ClanPage";
 import RoleList from "./pages/RoleList";
 import RoleDetail from "./pages/RoleDetail";
-import ClanPage from "./pages/ClanPage";
-import HomePage from "./pages/HomePage";
+import HistoryPage from "./pages/HistoryPage";
+import HousePage from "./pages/HousePage";
+import BranchList from "./pages/BranchList";
+import GenealogyPage from "./pages/GenealogyPage";
 
 function PlaceholderPage({ title, description }) {
   return (
@@ -22,89 +26,33 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         <Route path="/clan" element={<ClanPage />} />
-
-        <Route
-          path="/branches"
-          element={
-            <PlaceholderPage
-              title="Ngành họ"
-              description="Quản lý 5 ngành tổ con và các nhà tổ lớn."
-            />
-          }
-        />
-
-        <Route
-          path="/members"
-          element={
-            <PlaceholderPage
-              title="Gia phả"
-              description="Quản lý thành viên, đời thế hệ, quan hệ cha mẹ con."
-            />
-          }
-        />
-
-        <Route
-          path="/houses"
-          element={
-            <PlaceholderPage
-              title="Nhà thờ tổ"
-              description="Thông tin nhà thờ tổ cả và các nhà tổ ngành."
-            />
-          }
-        />
-
-        <Route
-          path="/history"
-          element={
-            <PlaceholderPage
-              title="Lịch sử"
-              description="Bài viết lịch sử hình thành và phát triển dòng họ."
-            />
-          }
-        />
-
-        <Route
-          path="/events"
-          element={
-            <PlaceholderPage
-              title="Sự kiện"
-              description="Giỗ tổ, họp họ, lễ cúng, tu sửa nhà thờ tổ."
-            />
-          }
-        />
-
-        <Route
-          path="/media"
-          element={
-            <PlaceholderPage
-              title="Ảnh tư liệu"
-              description="Hình ảnh, video, tài liệu về dòng họ và nhà thờ tổ."
-            />
-          }
-        />
-
-        <Route
-          path="/contributions"
-          element={
-            <PlaceholderPage
-              title="Công đức"
-              description="Quản lý đóng góp công đức của con cháu."
-            />
-          }
-        />
-
-        <Route
-          path="/users"
-          element={
-            <PlaceholderPage
-              title="Người dùng hệ thống"
-              description="Quản lý tài khoản đăng nhập và người dùng quản trị."
-            />
-          }
-        />
-
+        <Route path="/branches" element={<BranchList />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/members" element={<GenealogyPage />} />
+        <Route path="/houses" element={<HousePage />} />
         <Route path="/roles" element={<RoleList />} />
         <Route path="/roles/:id" element={<RoleDetail />} />
+
+        <Route
+          path="/tombs"
+          element={<PlaceholderPage title="Lăng mộ tổ tiên" description="Thông tin lăng mộ tổ tiên và các khu mộ dòng họ." />}
+        />
+
+        <Route
+          path="/education"
+          element={<PlaceholderPage title="Khuyến học" description="Quỹ khuyến học, danh sách khen thưởng và thành tích con cháu." />}
+        />
+
+        <Route
+          path="/contact"
+          element={<PlaceholderPage title="Liên hệ" description="Thông tin liên hệ ban quản lý dòng họ, Facebook và Zalo." />}
+        />
+
+        <Route
+          path="/settings"
+          element={<PlaceholderPage title="Cấu hình hệ thống" description="Thiết lập hệ thống quản trị." />}
+        />
+
       </Routes>
     </MainLayout>
   );

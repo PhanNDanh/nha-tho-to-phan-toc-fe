@@ -4,7 +4,6 @@ import {
   FaLandmark,
   FaSitemap,
   FaUsers,
-  FaChurch,
   FaBookOpen,
   FaCalendarAlt,
   FaImages,
@@ -15,7 +14,12 @@ import {
   FaSignOutAlt,
   FaEdit,
   FaSave,
+  FaPhoneAlt,
+  FaUniversity,
+  FaGraduationCap,
+  FaMonument,
 } from "react-icons/fa";
+import { PiTreeStructureFill } from "react-icons/pi";
 import { useNavigate, useLocation } from "react-router-dom";
 import keycloak from "../config/keycloak";
 import "./MainLayout.css";
@@ -51,9 +55,12 @@ function MainLayout({ children }) {
       <aside className="sidebar">
         <div className="sidebar-logo">
           <div className="logo-mark">祠</div>
+
           <div>
-            <div className="logo-title">Phan Quý</div>
-            <div className="logo-subtitle">Nhà thờ tổ</div>
+            <div className="logo-title">Phan Đại Tộc</div>
+            <div className="logo-subtitle">
+              Xuân Phương - Xuân Trường
+            </div>
           </div>
         </div>
 
@@ -88,16 +95,8 @@ function MainLayout({ children }) {
             className={`menu-button ${isActive("/members") ? "active" : ""}`}
             onClick={() => goToPage("/members")}
           >
-            <FaUsers />
+            <PiTreeStructureFill />
             <span>Gia phả</span>
-          </button>
-
-          <button
-            className={`menu-button ${isActive("/houses") ? "active" : ""}`}
-            onClick={() => goToPage("/houses")}
-          >
-            <FaChurch />
-            <span>Nhà thờ tổ</span>
           </button>
 
           <button
@@ -106,6 +105,30 @@ function MainLayout({ children }) {
           >
             <FaBookOpen />
             <span>Lịch sử</span>
+          </button>
+
+          <button
+            className={`menu-button ${isActive("/houses") ? "active" : ""}`}
+            onClick={() => goToPage("/houses")}
+          >
+            <FaUniversity />
+            <span>Nhà thờ tổ</span>
+          </button>
+
+          <button
+            className={`menu-button ${isActive("/tombs") ? "active" : ""}`}
+            onClick={() => goToPage("/tombs")}
+          >
+            <FaMonument />
+            <span>Lăng mộ tổ tiên</span>
+          </button>
+
+          <button
+            className={`menu-button ${isActive("/education") ? "active" : ""}`}
+            onClick={() => goToPage("/education")}
+          >
+            <FaGraduationCap />
+            <span>Khuyến học</span>
           </button>
 
           <button
@@ -121,7 +144,7 @@ function MainLayout({ children }) {
             onClick={() => goToPage("/media")}
           >
             <FaImages />
-            <span>Ảnh tư liệu</span>
+            <span>Thư viện ảnh</span>
           </button>
 
           <button
@@ -131,25 +154,13 @@ function MainLayout({ children }) {
             <FaHeart />
             <span>Công đức</span>
           </button>
-        </nav>
-
-        <div className="menu-section-title system-title">Quản trị hệ thống</div>
-
-        <nav className="sidebar-menu">
-          <button
-            className={`menu-button ${isActive("/users") ? "active" : ""}`}
-            onClick={() => goToPage("/users")}
-          >
-            <FaUsers />
-            <span>Người dùng</span>
-          </button>
 
           <button
-            className={`menu-button ${isActive("/roles") ? "active" : ""}`}
-            onClick={() => goToPage("/roles")}
+            className={`menu-button ${isActive("/contact") ? "active" : ""}`}
+            onClick={() => goToPage("/contact")}
           >
-            <FaUserShield />
-            <span>Vai trò</span>
+            <FaPhoneAlt />
+            <span>Liên hệ</span>
           </button>
         </nav>
       </aside>
@@ -157,9 +168,9 @@ function MainLayout({ children }) {
       <div className="main-wrapper">
         <header className="navbar">
           <div>
-            <div className="navbar-title">Hệ thống nhà thờ tổ Phan Quý</div>
+            <div className="navbar-title">Hệ thống Phan Đại Tộc</div>
             <div className="navbar-subtitle">
-              Xóm 4, Xuân Phương, Xuân Trường, Nam Định
+              Nhà thờ tổ Phan Tộc - Xuân Phương, Xuân Trường, Nam Định
             </div>
           </div>
 
@@ -177,14 +188,23 @@ function MainLayout({ children }) {
 
               {settingOpen && (
                 <div className="dropdown-menu">
+                  <div className="dropdown-title">Quản trị hệ thống</div>
+
                   <button onClick={() => goToPage("/users")}>
                     <FaUsers />
-                    Người dùng
+                    Tài khoản quản trị
                   </button>
 
                   <button onClick={() => goToPage("/roles")}>
                     <FaUserShield />
-                    Vai trò
+                    Phân quyền hệ thống
+                  </button>
+
+                  <div className="dropdown-divider" />
+
+                  <button onClick={() => goToPage("/settings")}>
+                    <FaCog />
+                    Cấu hình hệ thống
                   </button>
                 </div>
               )}
@@ -234,7 +254,7 @@ function MainLayout({ children }) {
         <main className="content">{children}</main>
 
         <footer className="footer">
-          © 2026 Nhà thờ tổ Phan Quý - Di tích lịch sử năm 2009
+          © 2026 Phan Đại Tộc - Nhà thờ tổ Phan Tộc
         </footer>
       </div>
     </div>

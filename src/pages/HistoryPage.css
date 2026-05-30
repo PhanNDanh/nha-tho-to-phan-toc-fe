@@ -1,0 +1,82 @@
+.history-page {
+  width: 100%;
+}
+
+.history-header {
+  background: linear-gradient(135deg, #7f1d1d, #dc2626);
+  color: white;
+  border-radius: 24px;
+  padding: 36px;
+  margin-bottom: 24px;
+}
+
+.history-header span {
+  font-weight: 900;
+  opacity: 0.9;
+}
+
+.history-header h1 {
+  margin: 12px 0 8px;
+  font-size: 40px;
+  font-weight: 950;
+}
+
+.history-header p {
+  margin: 0;
+  font-size: 17px;
+}
+
+.history-card {
+  background: white;
+  border: 1px solid #ececec;
+  border-radius: 22px;
+  padding: 28px;
+  margin-bottom: 22px;
+}
+
+.history-card h2 {
+  margin: 0 0 14px;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.history-card p {
+  line-height: 1.9;
+  color: #4b5563;
+  font-size: 16px;
+}
+
+.history-card blockquote {
+  margin: 22px 0 0;
+  padding: 20px 24px;
+  background: #fff7ed;
+  border-left: 5px solid #c2410c;
+  border-radius: 14px;
+  color: #9a3412;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.7;
+}
+
+.history-timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.history-timeline div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #fafafa;
+}
+
+.history-timeline strong {
+  color: #b42318;
+  font-size: 18px;
+}
+
+.history-timeline p {
+  margin: 0;
+}
